@@ -48,9 +48,9 @@ get_averaged_soil_layers<-function(soil){
 ############################################################################################
 
 
-setwd('C:\\SenegalGIS\\senegal_aquacrop_model\\data')
+setwd('C:\\SenegalGIS\\senegal_aquacrop_model\\data') 
 soil<-read.table( 'AEZ_samples_with_soil3.csv', sep = ',', header = TRUE)
-soil$texture_class<-soil_texture_class(soil)
+
 
 
 
