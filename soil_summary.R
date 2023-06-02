@@ -45,11 +45,22 @@ get_averaged_soil_layers<-function(soil){
   return(soil)
 }
 
+get_soil<-function(){
+  setwd('C:\\SenegalGIS\\senegal_aquacrop_model\\data') 
+  soil<-read.table( 'AEZ_samples_with_soil3.csv', sep = ',', header = TRUE)
+  soil<-get_averaged_soil_layers(soil)
+  soil<-soil%>%filter(upper_60_clay_ave>0)
+  ##There is one profile where the sum of textures = 100.1 which causes an error when estimating texture class
+  soil$upper_60_sand_ave[which(soil$ID==3508)]=soil$upper_60_sand_ave[which(soil$ID==3508)]-1
+  soil<-soil%>%filter(region %in% c('Bassin arachidier', 'Casamance', 'Senegal oriental'))
+  soil$texture_class<-soil_texture_class(soil)
+  return(soil)
+}
+
 ############################################################################################
 
 
-setwd('C:\\SenegalGIS\\senegal_aquacrop_model\\data') 
-soil<-read.table( 'AEZ_samples_with_soil3.csv', sep = ',', header = TRUE)
+
 
 
 
