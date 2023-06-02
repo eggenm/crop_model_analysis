@@ -8,6 +8,13 @@ library(soiltexture)
 
 #################    FUNCTIONS   ##################################
 
+get_median_yearly_observations<-function(data){
+  data<-data%>%group_by(soil_id, year, zone, texture_class)%>%
+    arrange(desc(season_yield)) %>%
+    slice(4)%>%
+    select(season_yield, upper_60_clay_ave, upper_60_sand_ave, upper_60_soc_ave, upper_60_silt_ave, precip, planting_date)
+  return(data)
+}
 
 #Use this function for a shortcut when using 2 sets of rainfall categories
 get_resampled_data<-function(high_rainfall_data, low_rainfall_data, this_zone){
