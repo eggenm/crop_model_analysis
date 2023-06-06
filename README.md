@@ -10,3 +10,17 @@ These are R files for the analysis and visualization of aquacrop Senegal crop mo
 
 ***yield_resampling_functions.R***: This is a set of functions used in the production of figures for the draft publication. It has methods for taking the median yearly value from all planting dates used at a field(soil_id). It has a method for resampling these yield observations based on soil textures found for a particular zone. Another method takes the set of high rainfall yield observations and low rainfall yield observations and creating a dataset of resampled observations for each of those. All of these assume some set of yieldobservations are supplied to the function.
 
+***water_content_by_texture_class.R*** : This routine creates a variety of figures showing water fluxes (soil evaporation, soil water content, transpiration) through the season. It aggregates water fluxes based on the days after planting in a zone.
+
+
+***precipMaxMinYears.R***: This routine creates the major resampled yield figures for etreme rainfall in a season (highest and lowest 5 seasonal precip totals). Relies heavily on yieldResamplingFunctions.R and input:  millet_factors_FULLRUN.csv
+
+
+***result_figure_yield_all_soil_texture.R***:
+
+
+***result_figure_combined_zonal_yield_distributions.R***:
+
+
+***min_max_yields_bydecade.R***:
+
