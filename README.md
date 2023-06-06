@@ -8,4 +8,5 @@ These are R files for the analysis and visualization of aquacrop Senegal crop mo
 
 ***weather_summary.R***: This file encapsulates reading weather data and creating monthly aggregated statistics. It is used by millet_factors.R to make the master list of yield influencing factors. The collect_weather_inputs() function relies on per zone csv input files named 'XXXX_weather_from_python.csv' to create a datatable of month_weather_summary used by other routines. 
 
+***yield_resampling_functions.R***: This is a set of functions used in the production of figures for the draft publication. It has methods for taking the median yearly value from all planting dates used at a field(soil_id). It has a method for resampling these yield observations based on soil textures found for a particular zone. Another method takes the set of high rainfall yield observations and low rainfall yield observations and creating a dataset of resampled observations for each of those. All of these assume some set of yieldobservations are supplied to the function.
 
