@@ -64,4 +64,10 @@ millet_factors <- merge(millet_factors, sept_summary, by.x = c('site_id', 'year'
 setwd('C:\\SenegalGIS\\crop_model_result\\fromsharecomputer\\')
 
 # Write millet factors data to a CSV file
-write.csv(millet_factors, file = 'millet_factors_fullrunTEST.csv')
+write.csv(millet_factors, file = 'millet_factors_fullrun.csv')
+
+summary<-millet_factors%>%filter(zone %in% c('Bassin arachidier', 'Casamance', 'Senegal oriental') )
+summary_median<-get_median_yearly_observations(summary)
+summary_median$yield = 100*summary_median$season_yield
+
+write.csv(summary_median, file = 'fullrun_summary_median.csv')
