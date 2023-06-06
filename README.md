@@ -13,7 +13,7 @@ These are R files for the analysis and visualization of aquacrop Senegal crop mo
 ***water_content_by_texture_class.R*** : This routine creates a variety of figures showing water fluxes (soil evaporation, soil water content, transpiration) through the season. It aggregates water fluxes based on the days after planting in a zone.
 
 
-***precipMaxMinYears.R***: This routine creates the major resampled yield figures for etreme rainfall in a season (highest and lowest 5 seasonal precip totals). Relies heavily on yieldResamplingFunctions.R and input:  millet_factors_FULLRUN.csv
+***result_figure_precipMaxMinYears.R***: This routine creates the major resampled yield figures for etreme rainfall in a season (highest and lowest 5 seasonal precip totals). Relies heavily on yieldResamplingFunctions.R and input:  fullrun_summary_median.csv
 
 
 ***result_figure_yield_all_soil_texture.R***:
